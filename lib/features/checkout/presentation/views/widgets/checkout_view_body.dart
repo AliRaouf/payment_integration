@@ -16,12 +16,14 @@ class CheckoutViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Center(
-              child: Image.asset(
-            "assets/images/basket_image.png",
-          )),
+          Expanded(
+            child: Center(
+                child: Image.asset(
+              "assets/images/basket_image.png",
+            )),
+          ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           const PriceInfo(),
           const HorizontalDivider(),

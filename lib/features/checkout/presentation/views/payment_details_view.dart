@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_integration/core/widgets/custom_appbar.dart';
 import 'package:payment_integration/core/widgets/custom_button.dart';
+import 'package:payment_integration/features/checkout/presentation/views/thank_you_view.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widgets/payment_details_view_body.dart';
 
 class PaymentDetailsView extends StatefulWidget {
@@ -23,6 +24,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
         child: CustomButton(text: "Pay", onPressed: (){
           if (formKey.currentState!.validate()){
             formKey.currentState!.save();
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const ThankYouView(),));
           }else{
             autovalidateMode = AutovalidateMode.always;
           }

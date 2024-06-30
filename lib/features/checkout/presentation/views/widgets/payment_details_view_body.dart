@@ -3,7 +3,8 @@ import 'package:payment_integration/features/checkout/presentation/views/widgets
 import 'package:payment_integration/features/checkout/presentation/views/widgets/payment_method_list.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
-  const PaymentDetailsViewBody({super.key, required this.formKey, required this.autovalidateMode});
+  const PaymentDetailsViewBody(
+      {super.key, required this.formKey, required this.autovalidateMode});
   final GlobalKey<FormState> formKey;
   final AutovalidateMode autovalidateMode;
 
@@ -19,7 +20,6 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
 
   final bool isActive = false;
 
-
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -30,8 +30,10 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
             child: PaymentMethodList(paymentMethods: paymentMethods),
           ),
         ),
-        SliverToBoxAdapter(child: CustomCreditCard(formKey: widget.formKey, autovalidateMode:widget.autovalidateMode)),
-
+        SliverToBoxAdapter(
+            child: CustomCreditCard(
+                formKey: widget.formKey,
+                autovalidateMode: widget.autovalidateMode)),
       ],
     );
   }
